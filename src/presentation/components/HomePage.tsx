@@ -9,7 +9,7 @@ export const HomePage: FC = () => {
       id: 'assignmentplus',
       title: 'Assignment+',
       description: 'An assignment cover page generator to create professional-looking cover pages for your assignments',
-      href: '/tools/assignmentplus',
+      href: '/tools/assigmentplus',
       icon: '📄',
       color: 'from-blue-500 to-purple-600'
     },
