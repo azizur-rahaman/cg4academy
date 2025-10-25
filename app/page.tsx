@@ -1,5 +1,5 @@
-import { UnderConstructionPage } from "@/src/presentation/components/UnderConstructionPage";
+import { HomePage } from "@/src/presentation/components/HomePage";
 
 export default function Home() {
-  return <UnderConstructionPage />;
+  return <HomePage />;
 }
