@@ -365,7 +365,7 @@ export const AssignmentPlusPage: FC = () => {
                   Cover Page Preview
                 </h3>
                 <p className="text-gray-500 max-w-sm">
-                  Fill in the form details and click "Generate Cover Page" to see your professional assignment cover page preview here.
+                  Fill in the form details and click &quot;Generate Cover Page&quot; to see your professional assignment cover page preview here.
                 </p>
               </div>
             )}

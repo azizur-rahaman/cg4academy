@@ -139,7 +139,7 @@ export const HomePage: FC = () => {
               </div>
               <h3 className="text-2xl font-bold text-gray-600 mb-4">More Tools Coming Soon</h3>
               <p className="text-gray-500 leading-relaxed">
-                We're constantly working on new tools to make your academic life easier. Stay tuned for exciting updates!
+                We&apos;re constantly working on new tools to make your academic life easier. Stay tuned for exciting updates!
               </p>
             </div>
           </div>
