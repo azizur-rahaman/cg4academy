@@ -1,0 +1,8 @@
+{
+  "rewrites": [
+    {
+      "source": "/tools/assigmentplus/:path*",
+      "destination": "https://assigmentplus.vercel.app/:path*"
+    }
+  ]
+}
