@@ -4,7 +4,7 @@ import { FC, useEffect, useState } from 'react';
 import { LottieAnimation } from './LottieAnimation';
 
 export const UnderConstructionPage: FC = () => {
-  const [animationData, setAnimationData] = useState<any>(null);
+  const [animationData, setAnimationData] = useState<unknown>(null);
   const [email, setEmail] = useState('');
   const [isSubscribed, setIsSubscribed] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -138,7 +138,7 @@ export const UnderConstructionPage: FC = () => {
 
         {/* Subtitle */}
         <p className="text-xl md:text-2xl text-gray-600 max-w-2xl mx-auto leading-relaxed">
-          We're building something amazing! Our website is currently under construction. 
+          We&apos;re building something amazing! Our website is currently under construction. 
           Stay tuned for an incredible experience.
         </p>
 

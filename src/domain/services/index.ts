@@ -6,7 +6,7 @@ export interface NotificationService {
 
 export interface EmailService {
   send(to: string, subject: string, body: string): Promise<void>;
-  sendTemplate(to: string, templateId: string, data: Record<string, any>): Promise<void>;
+  sendTemplate(to: string, templateId: string, data: Record<string, unknown>): Promise<void>;
 }
 
 export interface AuthenticationService {

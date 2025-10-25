@@ -1,4 +1,4 @@
-import { User, Course, Enrollment } from '@/domain/entities';
+import { User, Enrollment } from '@/domain/entities';
 import { UserRepository, CourseRepository, EnrollmentRepository } from '@/domain/repositories';
 import { NotificationService } from '@/domain/services';
 

@@ -4,7 +4,7 @@ import Lottie from 'lottie-react';
 import { FC } from 'react';
 
 interface LottieAnimationProps {
-  animationData: any;
+  animationData: unknown;
   className?: string;
   loop?: boolean;
   autoplay?: boolean;
