@@ -1,26 +1,23 @@
 "use client";
 import React, { FC } from "react";
-import DeepOceanCard from "./cards/deep-ocean-card";
-import ElectricPurpleCard from "./cards/electric-purple-card";
-import ForestGreenCard from "./cards/forest-green-card";
-import ClassicBlackCard from "./cards/classic-black-card";
-import CrimsonRedCard from "./cards/crimson-red-card";
-import VibrantOrangeCard from "./cards/vibrant-orange-card";
 
-// The main App component demonstrates a gallery of NoiseCards with different colors.
-const App: FC = () => {
+// Basic noise texture component for background effects
+const Noise: FC = () => {
   return (
-    <div className="min-h-screen w-full bg-gray-800 flex items-center justify-center p-8 font-sans">
-      <div className="flex flex-wrap gap-8 justify-center">
-        <DeepOceanCard />
-        <ElectricPurpleCard />
-        <ForestGreenCard />
-        <ClassicBlackCard />
-        <CrimsonRedCard />
-        <VibrantOrangeCard />
-      </div>
+    <div className="pointer-events-none fixed inset-0 z-50 opacity-20">
+      <svg className="h-full w-full">
+        <filter id="noise">
+          <feTurbulence
+            type="fractalNoise"
+            baseFrequency="0.8"
+            numOctaves="4"
+            stitchTiles="stitch"
+          />
+        </filter>
+        <rect width="100%" height="100%" filter="url(#noise)" />
+      </svg>
     </div>
   );
 };
 
-export default App;
+export default Noise;

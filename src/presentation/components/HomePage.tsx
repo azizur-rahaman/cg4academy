@@ -137,7 +137,7 @@ export const HomePage: FC = () => {
               Why Choose <span className="bg-gradient-to-r from-indigo-400 to-purple-400 bg-clip-text text-transparent">Us</span>
             </h2>
             <p className="text-xl md:text-2xl text-white/60 max-w-2xl mx-auto">
-              We're not just building tools, we're building the future of student productivity
+              We&apos;re not just building tools, we&apos;re building the future of student productivity
             </p>
           </div>
 
@@ -218,7 +218,7 @@ export const HomePage: FC = () => {
                 </div>
                 <h3 className="text-3xl font-bold text-white/80 mb-4">More Tools Coming Soon</h3>
                 <p className="text-white/60 text-lg leading-relaxed">
-                  We're constantly working on new tools to make your academic life easier. Stay tuned!
+                  We&apos;re constantly working on new tools to make your academic life easier. Stay tuned!
                 </p>
               </Card>
             </MagicContainer>
