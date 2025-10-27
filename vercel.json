@@ -3,6 +3,10 @@
     {
       "source": "/tools/assigmentplus/:path*",
       "destination": "https://assigmentplus.vercel.app/:path*"
+    },
+    {
+      "source": "/tools/cv-maker/:path*",
+      "destination": "https://cv-maker-cg4-academy.vercel.app/:path*"
     }
   ]
 }
