@@ -9,15 +9,15 @@ import { Card } from '@/components/ui/card';
 
 export const HomePage: FC = () => {
   const tools = [
-    {
-      id: 'lms',
-      title: 'LMS',
-      description: 'Learn, Practice, and Master structured programming courses',
-      href: '/lms',
-      icon: <GraduationCap className="w-6 h-6" />,
-      gradient: 'from-purple-500 via-purple-600 to-indigo-600',
-      shadowColor: 'shadow-purple-500/20'
-    },
+    // {
+    //   id: 'lms',
+    //   title: 'LMS',
+    //   description: 'Learn, Practice, and Master structured programming courses',
+    //   href: '/lms',
+    //   icon: <GraduationCap className="w-6 h-6" />,
+    //   gradient: 'from-purple-500 via-purple-600 to-indigo-600',
+    //   shadowColor: 'shadow-purple-500/20'
+    // },
     {
       id: 'assignment-plus',
       title: 'Assignment+',
