@@ -2,267 +2,156 @@
 
 import { FC } from 'react';
 import Link from 'next/link';
-import { ArrowRight, Target, Zap, Users, Sparkles } from 'lucide-react';
-import SparklesText from '@/components/sparklestext';
-import MagicContainer from '@/components/magiccard';
+import { ArrowRight, FileText, FileUser, Trash2 } from 'lucide-react';
+import { Header } from './Header';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
 
 export const HomePage: FC = () => {
   const tools = [
     {
-      id: 'assignmentplus',
+      id: 'assignment-plus',
       title: 'Assignment+',
-      description: 'An assignment cover page generator to create professional-looking cover pages for your assignments',
+      description: 'Create professional assignment cover pages with ease',
       href: '/tools/assigmentplus',
-      icon: '📄',
-      color: 'from-blue-500 to-purple-600'
-    },
-    // Add more tools here in the future
-  ];
-
-  const features = [
-    {
-      icon: <Target className="w-10 h-10" />,
-      title: 'Problem Solvers',
-      description: 'We identify real academic challenges and create practical solutions that make student life easier and more productive.',
-      gradient: 'from-indigo-500 via-purple-500 to-pink-500'
+      icon: <FileText className="w-8 h-8" />,
+      color: 'bg-blue-500'
     },
     {
-      icon: <Zap className="w-10 h-10" />,
-      title: 'Innovation Driven',
-      description: 'Using cutting-edge technology and creative thinking to build tools that streamline academic workflows and boost efficiency.',
-      gradient: 'from-cyan-500 via-blue-500 to-indigo-500'
+      id: 'cv-maker',
+      title: 'CV Maker',
+      description: 'Build stunning professional CVs in minutes',
+      href: '/tools/cv-maker',
+      icon: <FileUser className="w-8 h-8" />,
+      color: 'bg-cyan-500'
     },
     {
-      icon: <Users className="w-10 h-10" />,
-      title: 'Community Focused',
-      description: 'Built by the student community, for the student community. Every tool is designed with real student needs in mind.',
-      gradient: 'from-green-500 via-teal-500 to-cyan-500'
-    }
+      id: 'pdf-tools',
+      title: 'PDF Tools',
+      description: 'Compress, merge, and edit PDF documents',
+      href: '#',
+      icon: <Trash2 className="w-8 h-8" />,
+      color: 'bg-rose-500',
+      comingSoon: true
+    },
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-950 via-gray-900 to-black relative overflow-hidden">
-      {/* Animated background gradients */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-0 left-0 w-[500px] h-[500px] bg-gradient-to-br from-indigo-600/20 to-purple-600/20 rounded-full blur-3xl animate-pulse"></div>
-        <div className="absolute bottom-0 right-0 w-[600px] h-[600px] bg-gradient-to-br from-cyan-600/15 to-blue-600/15 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '2s' }}></div>
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] bg-gradient-to-br from-pink-600/10 to-purple-600/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '4s' }}></div>
-      </div>
+    <div className="min-h-screen bg-white">
+      <Header />
       
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8">
-        <div className="relative max-w-7xl mx-auto text-center z-10 py-20">
-          {/* Badge */}
-          <div className="inline-block mb-8 animate-in fade-in slide-in-from-top duration-1000">
-            <div className="px-6 py-2.5 bg-white/5 backdrop-blur-md border border-white/10 rounded-full hover:bg-white/10 transition-all duration-300">
-              <span className="text-sm font-medium text-white/90 flex items-center gap-2">
-                <Sparkles className="w-4 h-4 text-indigo-400" />
-                Built by Students, For Students
-                <Sparkles className="w-4 h-4 text-purple-400" />
-              </span>
-            </div>
-          </div>
+      <section className="relative pt-32 pb-20 px-4 sm:px-6 lg:px-8 overflow-hidden">
+        {/* Decorative dots pattern */}
+        <div className="absolute inset-0 overflow-hidden pointer-events-none opacity-10">
+          <div className="absolute top-0 right-0 w-96 h-96" style={{
+            backgroundImage: 'radial-gradient(circle, #e5e7eb 1px, transparent 1px)',
+            backgroundSize: '20px 20px'
+          }}></div>
+          <div className="absolute bottom-0 left-0 w-96 h-96" style={{
+            backgroundImage: 'radial-gradient(circle, #e5e7eb 1px, transparent 1px)',
+            backgroundSize: '20px 20px'
+          }}></div>
+        </div>
+
+        <div className="max-w-5xl mx-auto text-center relative z-10">
+          <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-gray-900 mb-6 leading-tight">
+            We help with your academic tasks
+          </h1>
+          <p className="text-2xl md:text-3xl text-emerald-500 font-medium mb-12">
+            Easy, pleasant and productive student tools
+          </p>
           
-          {/* Main Headline with SparklesText */}
-          <div className="space-y-8 mb-16">
-            <h1 className="text-6xl md:text-8xl lg:text-9xl font-bold tracking-tight animate-in fade-in slide-in-from-bottom duration-1000 delay-200">
-              <SparklesText 
-                className="bg-gradient-to-r from-indigo-400 via-purple-400 to-pink-400 bg-clip-text text-transparent"
-                sparkleCount={12}
-                colors={{ first: '#818cf8', second: '#c084fc' }}
-              >
-                Passionate Students
-              </SparklesText>
-            </h1>
+          <div className="inline-flex flex-col items-center gap-6">
+            <Button 
+              size="lg"
+              className="px-10 py-6 bg-emerald-500 hover:bg-emerald-600 text-white rounded-lg font-semibold text-lg shadow-lg hover:shadow-xl transition-all duration-300 group"
+            >
+              Explore our tools - it&apos;s free
+              <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+            </Button>
             
-            <h2 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white/95 animate-in fade-in slide-in-from-bottom duration-1000 delay-300">
-              Making Tools for Students
-            </h2>
-            
-            <p className="text-xl md:text-2xl text-white/60 max-w-3xl mx-auto leading-relaxed animate-in fade-in slide-in-from-bottom duration-1000 delay-500">
-              Empowering academic excellence through innovative tools. 
-              Simplify your academic journey with our carefully crafted solutions.
-            </p>
-
-            {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row gap-6 justify-center items-center pt-8 animate-in fade-in slide-in-from-bottom duration-1000 delay-700">
-              <Button 
-                size="lg"
-                className="px-10 py-6 bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-500 hover:to-purple-500 text-white rounded-xl font-semibold text-lg shadow-lg shadow-indigo-500/50 hover:shadow-xl hover:shadow-indigo-500/60 transition-all duration-300 transform hover:scale-105 group"
-              >
-                Explore Tools
-                <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
-              </Button>
-              <Button 
-                variant="outline"
-                size="lg"
-                className="px-10 py-6 border-2 border-white/20 bg-white/5 hover:bg-white/10 text-white rounded-xl font-semibold text-lg backdrop-blur-sm transition-all duration-300 transform hover:scale-105"
-              >
-                Learn More
-              </Button>
-            </div>
-          </div>
-
-          {/* Stats or Social Proof */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-24 max-w-4xl mx-auto animate-in fade-in slide-in-from-bottom duration-1000 delay-1000">
-            <div className="text-center">
-              <div className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-indigo-400 to-purple-400 bg-clip-text text-transparent mb-2">
-                10K+
-              </div>
-              <div className="text-white/60 text-lg">Happy Students</div>
-            </div>
-            <div className="text-center">
-              <div className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent mb-2">
-                99.9%
-              </div>
-              <div className="text-white/60 text-lg">Uptime</div>
-            </div>
-            <div className="text-center">
-              <div className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-green-400 to-teal-400 bg-clip-text text-transparent mb-2">
-                24/7
-              </div>
-              <div className="text-white/60 text-lg">Support</div>
+            <div className="flex items-center gap-2 text-gray-600">
+              <span>or choose one of our {tools.length}+ student tools</span>
+              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+              </svg>
             </div>
           </div>
         </div>
-      </section>
 
-      {/* Features Section */}
-      <section className="relative py-32 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-20">
-            <h2 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6">
-              Why Choose <span className="bg-gradient-to-r from-indigo-400 to-purple-400 bg-clip-text text-transparent">Us</span>
-            </h2>
-            <p className="text-xl md:text-2xl text-white/60 max-w-2xl mx-auto">
-              We&apos;re not just building tools, we&apos;re building the future of student productivity
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {features.map((feature, index) => (
-              <MagicContainer key={index} className="h-full">
-                <Card className="bg-gray-900/50 backdrop-blur-xl border-white/10 p-8 h-full hover:bg-gray-900/70 transition-all duration-300 group">
-                  <div className={`w-20 h-20 bg-gradient-to-br ${feature.gradient} rounded-2xl flex items-center justify-center mb-6 text-white group-hover:scale-110 transition-transform duration-300 shadow-lg`}>
-                    {feature.icon}
-                  </div>
-                  <h3 className="text-2xl md:text-3xl font-bold text-white mb-4 group-hover:text-indigo-300 transition-colors">
-                    {feature.title}
-                  </h3>
-                  <p className="text-white/70 text-lg leading-relaxed">
-                    {feature.description}
-                  </p>
-                </Card>
-              </MagicContainer>
-            ))}
-          </div>
+        {/* Wave decoration */}
+        <div className="absolute bottom-0 left-0 right-0 h-32 overflow-hidden">
+          <svg 
+            className="absolute bottom-0 w-full h-full" 
+            viewBox="0 0 1200 120" 
+            preserveAspectRatio="none"
+          >
+            <path 
+              d="M0,50 C300,100 600,0 900,50 C1050,75 1125,88 1200,100 L1200,120 L0,120 Z" 
+              fill="#f3f4f6"
+              opacity="0.5"
+            />
+            <path 
+              d="M0,70 C300,20 600,100 900,70 C1050,55 1125,48 1200,40 L1200,120 L0,120 Z" 
+              fill="#e5e7eb"
+            />
+          </svg>
         </div>
       </section>
 
       {/* Tools Section */}
-      <section className="relative py-32 px-4 sm:px-6 lg:px-8">
+      <section id="tools" className="relative py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-gray-100 to-white">
         <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-20">
-            <h2 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 flex items-center justify-center gap-4 flex-wrap">
-              Our
-              <SparklesText 
-                className="bg-gradient-to-r from-indigo-400 to-purple-400 bg-clip-text text-transparent"
-                sparkleCount={8}
-                colors={{ first: '#818cf8', second: '#c084fc' }}
-              >
-                Tools
-              </SparklesText>
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-blue-600 mb-4 uppercase tracking-wide">
+              Most Popular
             </h2>
-            <p className="text-xl md:text-2xl text-white/60 max-w-2xl mx-auto">
-              Discover powerful tools designed to enhance your academic experience
-            </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
             {tools.map((tool) => (
               <Link 
                 key={tool.id} 
                 href={tool.href}
-                className="group block h-full"
+                className={`group block ${tool.comingSoon ? 'pointer-events-none' : ''}`}
               >
-                <MagicContainer className="h-full">
-                  <Card className="bg-gray-900/50 backdrop-blur-xl border-white/10 p-8 h-full hover:bg-gray-900/70 transition-all duration-300">
-                    <div className={`w-20 h-20 bg-gradient-to-br ${tool.color} rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg shadow-purple-500/30`}>
-                      <span className="text-4xl">{tool.icon}</span>
+                <Card className="bg-white border border-gray-200 hover:border-gray-300 rounded-2xl p-8 h-full hover:shadow-lg transition-all duration-300 relative overflow-hidden">
+                  {tool.comingSoon && (
+                    <div className="absolute top-4 right-4 bg-yellow-100 text-yellow-800 text-xs font-semibold px-3 py-1 rounded-full">
+                      Coming Soon
                     </div>
-                    
-                    <h3 className="text-3xl font-bold text-white mb-4 group-hover:bg-gradient-to-r group-hover:from-indigo-400 group-hover:to-purple-400 group-hover:bg-clip-text group-hover:text-transparent transition-all duration-300">
-                      {tool.title}
-                    </h3>
-                    
-                    <p className="text-white/70 text-lg leading-relaxed mb-6">
-                      {tool.description}
-                    </p>
-                    
-                    <div className="flex items-center text-indigo-400 font-semibold text-lg group-hover:text-indigo-300 transition-colors duration-300">
-                      <span>Try it now</span>
-                      <ArrowRight className="ml-2 w-5 h-5 transform group-hover:translate-x-2 transition-transform duration-300" />
-                    </div>
-                  </Card>
-                </MagicContainer>
+                  )}
+                  
+                  <div className={`w-16 h-16 ${tool.color} rounded-xl flex items-center justify-center mb-6 text-white group-hover:scale-110 transition-transform duration-300`}>
+                    {tool.icon}
+                  </div>
+                  
+                  <h3 className="text-xl font-bold text-gray-900 mb-3">
+                    {tool.title}
+                  </h3>
+                  
+                  <p className="text-gray-600 leading-relaxed">
+                    {tool.description}
+                  </p>
+                </Card>
               </Link>
             ))}
-
-            {/* Coming Soon Card */}
-            <MagicContainer className="h-full">
-              <Card className="bg-gray-900/30 backdrop-blur-xl border-2 border-dashed border-white/20 p-8 flex flex-col items-center justify-center text-center h-full min-h-[400px]">
-                <div className="w-20 h-20 bg-white/10 rounded-2xl flex items-center justify-center mb-6">
-                  <span className="text-4xl">🔨</span>
-                </div>
-                <h3 className="text-3xl font-bold text-white/80 mb-4">More Tools Coming Soon</h3>
-                <p className="text-white/60 text-lg leading-relaxed">
-                  We&apos;re constantly working on new tools to make your academic life easier. Stay tuned!
-                </p>
-              </Card>
-            </MagicContainer>
           </div>
         </div>
       </section>
 
-      {/* Call to Action Section */}
-      <section className="relative py-32 px-4 sm:px-6 lg:px-8 mb-20">
-        <div className="max-w-5xl mx-auto">
-          <MagicContainer>
-            <div className="text-center bg-gradient-to-br from-indigo-600/20 via-purple-600/20 to-pink-600/20 backdrop-blur-xl rounded-3xl p-12 md:p-16 lg:p-20">
-              <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 flex items-center justify-center gap-3 flex-wrap">
-                <span className="text-white">Join Our</span>
-                <SparklesText 
-                  className="bg-gradient-to-r from-indigo-300 to-purple-300 bg-clip-text text-transparent"
-                  sparkleCount={10}
-                  colors={{ first: '#a78bfa', second: '#f0abfc' }}
-                >
-                  Community
-                </SparklesText>
-              </h2>
-              <p className="text-xl md:text-2xl text-white/70 mb-12 leading-relaxed max-w-2xl mx-auto">
-                Have an idea for a tool? Want to contribute? Join our community of passionate students building the future of academic tools.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-6 justify-center">
-                <Button 
-                  size="lg"
-                  className="px-12 py-7 bg-white text-gray-900 hover:bg-white/90 rounded-xl font-bold text-lg shadow-2xl hover:shadow-white/20 transition-all duration-300 transform hover:scale-105"
-                >
-                  Suggest a Tool
-                </Button>
-                <Button 
-                  variant="outline"
-                  size="lg"
-                  className="px-12 py-7 border-2 border-white/30 bg-white/5 hover:bg-white/10 text-white rounded-xl font-bold text-lg backdrop-blur-sm transition-all duration-300 transform hover:scale-105"
-                >
-                  Get Involved
-                </Button>
-              </div>
-            </div>
-          </MagicContainer>
+      {/* Footer */}
+      <footer className="bg-gray-50 border-t border-gray-200 py-12 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto text-center">
+          <p className="text-gray-600 mb-4">
+            Built by students, for students
+          </p>
+          <p className="text-sm text-gray-500">
+            © 2025 CG4Academy. All rights reserved.
+          </p>
         </div>
-      </section>
+      </footer>
     </div>
   );
 };
