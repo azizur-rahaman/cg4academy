@@ -13,9 +13,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "CG4Academy - Under Construction",
-  description: "CG4Academy is coming soon! We're building something amazing for you.",
-  keywords: ["CG4Academy", "education", "learning", "construction"],
+  title: "CG4Academy - All in one platform for students and educators",
+  description: "CG4Academy is an all-in-one platform designed to empower students and educators with cutting-edge tools and resources for effective learning and teaching in the construction industry.",
+  keywords: ["CG4Academy", "education", "learning", "construction", "LMS", "tools", "students", "educators", "courses", "assignments", "CV maker", "collaboration"],
   authors: [{ name: "CG4Academy Team" }],
 };
 
