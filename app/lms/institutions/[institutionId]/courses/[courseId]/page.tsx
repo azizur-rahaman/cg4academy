@@ -1,4 +1,4 @@
-import { LearningPage } from "@/src/presentation/components/LearningPage";
+import { LearningPage } from "@/src/features/lms/presentation/pages/LearningPage";
 
 export default function CourseTopicsPage() {
   return <LearningPage />;

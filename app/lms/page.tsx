@@ -1,4 +1,4 @@
-import { LMSHomePage } from "@/src/presentation/components/LMSHomePage";
+import { LMSHomePage } from "@/src/features/lms/presentation/pages/LMSHomePage";
 
 export default function LMSPage() {
   return <LMSHomePage />;
