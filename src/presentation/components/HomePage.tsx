@@ -14,7 +14,7 @@ export const HomePage: FC = () => {
       title: 'Assignment+',
       description: 'Create professional assignment cover pages with ease',
       href: '/tools/assigmentplus',
-      icon: <FileText className="w-8 h-8" />,
+      icon: <FileText className="w-6 h-6" />,
       gradient: 'from-blue-500 via-blue-600 to-indigo-600',
       shadowColor: 'shadow-blue-500/20'
     },
@@ -23,7 +23,7 @@ export const HomePage: FC = () => {
       title: 'CV Maker',
       description: 'Build stunning professional CVs in minutes',
       href: '/tools/cv-maker',
-      icon: <FileUser className="w-8 h-8" />,
+      icon: <FileUser className="w-6 h-6" />,
       gradient: 'from-cyan-500 via-teal-500 to-emerald-600',
       shadowColor: 'shadow-cyan-500/20'
     },
@@ -32,7 +32,7 @@ export const HomePage: FC = () => {
       title: 'PDF Tools',
       description: 'Compress, merge, and edit PDF documents',
       href: '#',
-      icon: <Trash2 className="w-8 h-8" />,
+      icon: <Trash2 className="w-6 h-6" />,
       gradient: 'from-rose-500 via-pink-500 to-purple-600',
       shadowColor: 'shadow-rose-500/20',
       comingSoon: true
@@ -149,44 +149,33 @@ export const HomePage: FC = () => {
           </div>
 
           {/* Tools Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
             {tools.map((tool) => (
               <Link 
                 key={tool.id} 
                 href={tool.href}
-                className={`group block ${tool.comingSoon ? 'pointer-events-none' : ''}`}
+                className={`group block ${tool.comingSoon ? 'pointer-events-none opacity-75' : ''}`}
               >
-                <Card className="relative bg-white/80 backdrop-blur-sm border border-slate-200/80 hover:border-slate-300 rounded-2xl p-8 h-full hover:shadow-2xl transition-all duration-500 overflow-hidden group-hover:-translate-y-1">
-                  {/* Gradient Background Effect */}
-                  <div className={`absolute inset-0 bg-gradient-to-br ${tool.gradient} opacity-0 group-hover:opacity-5 transition-opacity duration-500`}></div>
-                  
+                <Card className="relative bg-white border border-slate-200 hover:border-slate-300 rounded-xl p-6 h-full hover:shadow-lg transition-all duration-200">
                   {tool.comingSoon && (
-                    <div className="absolute top-4 right-4 bg-amber-50 text-amber-700 text-xs font-bold px-3 py-1.5 rounded-full border border-amber-200">
+                    <div className="absolute top-3 right-3 bg-amber-50 text-amber-700 text-xs font-semibold px-2.5 py-1 rounded-full border border-amber-200">
                       Coming Soon
                     </div>
                   )}
                   
                   {/* Icon */}
-                  <div className={`relative w-16 h-16 bg-gradient-to-br ${tool.gradient} rounded-2xl flex items-center justify-center mb-6 text-white shadow-lg ${tool.shadowColor} group-hover:scale-110 group-hover:rotate-3 transition-all duration-300`}>
+                  <div className={`w-14 h-14 bg-gradient-to-br ${tool.gradient} rounded-lg flex items-center justify-center mb-4 text-white`}>
                     {tool.icon}
                   </div>
                   
                   {/* Content */}
-                  <h3 className="text-xl font-bold text-slate-900 mb-3 group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:bg-clip-text transition-all duration-300" style={{backgroundImage: `linear-gradient(to right, var(--tw-gradient-stops))`}}>
+                  <h3 className="text-lg font-bold text-slate-900 mb-2">
                     {tool.title}
                   </h3>
                   
-                  <p className="text-slate-600 leading-relaxed mb-6">
+                  <p className="text-slate-600 text-sm leading-relaxed">
                     {tool.description}
                   </p>
-
-                  {/* Action Link */}
-                  {!tool.comingSoon && (
-                    <div className="flex items-center text-sm font-semibold text-slate-900 group-hover:text-emerald-600 transition-colors">
-                      <span>Get Started</span>
-                      <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                    </div>
-                  )}
                 </Card>
               </Link>
             ))}
